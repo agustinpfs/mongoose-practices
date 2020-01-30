@@ -27,7 +27,28 @@ const ryu = new Character({
 
 const doc = await ryu.save()
 console.log(doc)
+
+
+const ken = new Character({
+    name: 'Ken',
+    ultimate: 'Guren Enjinkyaku'
+  })
+  
+  await ken.save()
+
+const ryul = await Character.findOne({ name: 'Ryu' })
+console.log(ryul)
+
+const chars = await Character.find({ name: 'Ryu' }) //array documents
+console.log(chars)
+
+
+
+
 }
 
 runCode()
 .catch(error => { console.error(error) })
+
+
+// await Character.deleteMany({})
